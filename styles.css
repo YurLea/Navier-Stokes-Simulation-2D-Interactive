@@ -1,0 +1,101 @@
+html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #101015;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+#page {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* КВАДРАТНАЯ РАМКА С СИМУЛЯЦИЕЙ */
+#simFrame {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    width: min(92vmin, calc(100vw - 340px), calc(100vh - 24px));
+    aspect-ratio: 1 / 1;
+
+    border: 2px solid rgba(255,255,255,0.08);
+    border-radius: 18px;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+#glcanvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+    touch-action: none;
+    cursor: crosshair;
+}
+
+/* ПАНЕЛЬ СПРАВА */
+#ui {
+    position: fixed;
+    right: 12px;
+    top: 12px;
+
+    width: 280px;
+    max-height: calc(100vh - 24px);
+    overflow: auto;
+
+    padding: 12px;
+    border-radius: 12px;
+    background: rgba(20, 20, 28, 0.72);
+    color: #e8e8ee;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    user-select: none;
+}
+
+#ui h1 {
+    margin: 0 0 10px;
+    font-size: 18px;
+}
+
+#ui label {
+    display: block;
+    margin: 10px 0;
+    font-size: 13px;
+}
+
+#ui input[type="range"] {
+    width: 100%;
+    margin-top: 6px;
+}
+
+#ui input[type="checkbox"] {
+    transform: translateY(1px);
+}
+
+#ui button {
+    width: 100%;
+    padding: 10px 12px;
+    border: 0;
+    border-radius: 8px;
+    background: #2f68ff;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+#ui button:hover {
+    filter: brightness(1.08);
+}
+
+.hint {
+    margin: 10px 0 0;
+    opacity: 0.8;
+    font-size: 12px;
+    line-height: 1.4;
+}

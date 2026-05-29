@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Fluid WebGL2</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div id="page">
+    <div id="simFrame">
+        <canvas id="glcanvas"></canvas>
+    </div>
+
+    <div id="ui">
+        <h1>Fluid</h1>
+
+        <label>Resolution <span id="resVal">1024</span>
+            <input id="resolution" type="range" min="128" max="1024" step="64" value="704">
+        </label>
+
+        <label>Pressure iterations <span id="itersVal">50</span>
+            <input id="iterations" type="range" min="1" max="50" step="1" value="35">
+        </label>
+
+        <label>dt <span id="dtVal">0.003</span>
+            <input id="dt" type="range" min="0.001" max="0.05" step="0.001" value="0.005">
+        </label>
+
+        <label>Velocity dissipation <span id="velDisVal">0.9995</span>
+            <input id="velDiss" type="range" min="0.95" max="1.0" step="0.0005" value="1">
+        </label>
+
+        <label>Dye dissipation <span id="dyeDisVal">0.9995</span>
+            <input id="dyeDiss" type="range" min="0.95" max="1.0" step="0.0005" value="0.9995">
+        </label>
+
+        <label>Splat radius <span id="radiusVal">0.017</span>
+            <input id="splatRadius" type="range" min="0.005" max="0.08" step="0.001" value="0.017">
+        </label>
+
+        <label>Force multiplier <span id="forceVal">30</span>
+            <input id="forceMultiplier" type="range" min="1" max="3000" step="10" value="60">
+        </label>
+
+        <label>Obstacle enabled
+            <input id="obstacleEnabled" type="checkbox" checked>
+        </label>
+
+        <label>Obstacle center X <span id="obsXVal">0.50</span>
+            <input id="obsX" type="range" min="0" max="1" step="0.001" value="0.5">
+        </label>
+
+        <label>Obstacle center Y <span id="obsYVal">0.50</span>
+            <input id="obsY" type="range" min="0" max="1" step="0.001" value="0.5">
+        </label>
+
+        <label>Obstacle radius <span id="obsRVal">0.04</span>
+            <input id="obsR" type="range" min="0.01" max="0.45" step="0.001" value="0.025">
+        </label>
+
+        <label>No slip
+            <input id="noSlip" type="checkbox" checked>
+        </label>
+
+        <label>Gradient rotation <span id="rotVal">0</span>
+            <input id="gradientRotation" type="range" min="-180" max="180" step="1" value="0">
+        </label>
+
+        <button id="reset">Reset</button>
+        <p class="hint">Drag мышью по square frame, чтобы “вливать” жидкость.</p>
+    </div>
+</div>
+
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
